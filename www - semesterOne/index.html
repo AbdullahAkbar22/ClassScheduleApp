@@ -1,0 +1,80 @@
+<html>
+<title>Abdullah's UTD Schedule</title>
+
+<meta name="viewport" content="width=device-width">
+
+<script src="js/jquery.js"></script>
+
+<body>
+
+<style>
+body,html{
+	width:100%;
+	height:100%;
+	
+}
+body{
+	//background-color:#22CC6D;
+	background-color:black;
+	background-image: url("imgur/space.jpg");
+	background-size:cover;
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+*{
+	margin:0;
+    padding:0;
+
+}
+#earth,#comet{
+	
+	
+	position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+#earth{
+	height:200px;
+}
+#comet{
+	height:100px;
+	opacity:0;
+}
+
+</style>
+
+
+<img src="imgur/earth.png" id="earth"></img>
+<img src="imgur/comet.png" id="comet"></img>
+
+
+<script>
+$(document).ready(function(){
+$(this).on("click",function(){window.location='classSchedule.html'});
+setTimeout(function(){moveEarth();},1000);
+ 
+});
+
+function moveEarth(){
+	$("#earth").animate({
+			top:"100%",
+			left:"-80%",
+			height:"500px"
+    },5000, function(){showComet();});
+}
+
+function showComet(){
+	$("#comet").animate({
+			opacity:1,
+			height:"165px"
+    },3000, function(){setTimeout(function(){window.location = "classSchedule.html";},1000);}
+	);
+}
+</script>
+
+
+</body>
+
+</html>

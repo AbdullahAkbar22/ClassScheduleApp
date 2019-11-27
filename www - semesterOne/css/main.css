@@ -1,0 +1,121 @@
+body,html{
+	width:100%;
+	height:100%;
+	
+}
+body{
+	//background-color:#22CC6D;
+	background-color:white;
+	background-image: url("../imgur/whiteboard.jpg");
+	background-size:cover;
+
+}
+*{
+	margin:0;
+    padding:0;
+
+}
+#dayName{
+	position:absolute;
+	
+	margin-left:10%;
+	height:50px;
+	line-height:50px;
+	font-size:35pt;
+	font-family:Arial;
+	padding-bottom:15px;
+	color:white;
+	background-color:rgba(0, 153, 0,.5);
+	padding-left:5px;
+	padding-right:5px;
+}
+#dayScheduleDiv{
+	background-color:rgba(0, 153, 0,.5);
+	color:white;
+	position:absolute;
+	display:block;
+	width:100%;
+	margin-top:50px;
+
+}
+
+#displayControls{
+	position:absolute;
+	
+	height:50px;
+	display:block;
+	width:95%;
+	text-align:right;
+	
+	
+}
+.ctrlBTN{
+	background-color:#CC4501;
+	color:white;
+	cursor:pointer;
+	border: 0px solid black;
+	border-radius:40%;
+	font-size:20pt;
+	font-weight:bold;
+	padding: 5px;
+	padding-left:8px;
+	padding-right:8px;
+}
+
+.dayDiv{
+	padding-top:20px;
+	padding-bottom:20px;
+
+}
+.classData{
+	width:100%;
+	text-align:center;
+	font-size:15pt;
+	
+}
+.classTitle{
+	padding-top:10px;
+	font-size:25pt;
+	
+}
+#campusMap{
+	
+	width:100%;
+	height:auto;
+	position:absolute;
+	z-index:200;
+	display:none;
+	cursor:pointer;
+}
+#blackBack{
+	width:100%;
+	height:100%;
+	z-index:190;
+	position:absolute;
+	display:none;
+	background-color:rgba(0,0,0,.5);
+
+}
+
+#exit{
+	width:50px;
+	height:50px;
+	line-height:50px;
+	font-size:20pt;
+	color:white;
+	border-radius:50%;
+	
+	position:fixed;
+	display:none;
+	margin-top:3px;
+	margin-left:80%;
+	background-color:black;
+	text-align:center;
+	z-index:420;
+	cursor:pointer;
+
+}
+.locSpan{
+	cursor:pointer;
+
+}

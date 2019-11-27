@@ -1,0 +1,107 @@
+{
+
+"classes" : [
+	{
+		"classDay": 1,
+		"classID" : 20836,
+		"title": "PHYS 2125 - 114",
+		"location": "FN 2.212",
+		"timeData": {
+			"classStartHours": 13,
+			"classStartMinutes": 0,
+			"classEndHours": 15,
+			"classEndMinutes": 45
+		}
+	},
+	
+	{
+		"classDay": 3,
+		"classID" : 21425,
+		"title": "MATH 2418-398 LBR",
+		"location": "SLC 2.302",
+		"timeData": {
+			"classStartHours": 8,
+			"classStartMinutes": 0,
+			"classEndHours": 9,
+			"classEndMinutes": 50
+		}
+	},
+
+	{
+		"classDay": 13,
+		"classID" : 21424,
+		"title": "MATH 2418-HN1",
+		"location": "CB3 1.304",
+		"timeData": {
+			"classStartHours": 17,
+			"classStartMinutes": 30,
+			"classEndHours": 18,
+			"classEndMinutes": 45
+		}
+	},
+	
+	{
+		"classDay": 24,
+		"classID" : 23910,
+		"title": "CS 3305 - HON",
+		"location": "ECSW 3.250",
+		"timeData": {
+			"classStartHours": 11,
+			"classStartMinutes": 30,
+			"classEndHours": 12,
+			"classEndMinutes": 45
+		}
+	},
+	
+	{
+		"classDay": 24,
+		"classID" : 25387,
+		"title": "GOVT 2306-001",
+		"location": "ECSW 1.315",
+		"timeData": {
+			"classStartHours": 13,
+			"classStartMinutes": 0,
+			"classEndHours": 14,
+			"classEndMinutes": 15
+		}
+	},
+	
+	
+	{
+		"classDay": 24,
+		"classID" : 20998,
+		"title": "PHYS 2325-003",
+		"location": "SLC 1.102",
+		"timeData": {
+			"classStartHours": 14,
+			"classStartMinutes": 30,
+			"classEndHours": 15,
+			"classEndMinutes": 45
+		}
+	},
+	
+	{
+		"classDay": 24,
+		"classID" : 23990,
+		"title": "CS 3340 - HN1",
+		"location": "ECSW 1.365",
+		"timeData": {
+			"classStartHours": 19,
+			"classStartMinutes": 0,
+			"classEndHours": 20,
+			"classEndMinutes": 15
+		}
+	}
+	
+
+]
+
+
+
+
+
+
+}
+
+
+	

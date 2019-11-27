@@ -1,0 +1,380 @@
+
+<html>
+<title>Abdullah's UTD Schedule</title>
+
+<meta name="viewport" content="width=device-width">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+
+<style>
+body,html{
+	width:100%;
+	height:100%;
+	
+}
+body{
+	//background-color:#22CC6D;
+	background-color:#01573E;
+	background-image: url("space.jpg");
+	background-size:cover;
+
+}
+*{
+	margin:0;
+    padding:0;
+
+}
+#dayName{
+	position:absolute;
+	
+	margin-left:10%;
+	height:50px;
+	line-height:50px;
+	font-size:35pt;
+	font-family:Arial;
+	padding-bottom:15px;
+	color:white;
+	background-color:rgba(0,0,102,.5);
+	padding-left:5px;
+	padding-right:5px;
+}
+#dayScheduleDiv{
+	background-color:rgba(0,0,102,.5);
+	color:white;
+	position:absolute;
+	display:block;
+	width:100%;
+	margin-top:50px;
+
+}
+
+#displayControls{
+	position:absolute;
+	
+	height:50px;
+	display:block;
+	width:95%;
+	text-align:right;
+	
+	
+}
+.ctrlBTN{
+	background-color:#CC4501;
+	color:white;
+	cursor:pointer;
+	border: 0px solid black;
+	border-radius:40%;
+	font-size:20pt;
+	font-weight:bold;
+	padding: 5px;
+	padding-left:8px;
+	padding-right:8px;
+}
+
+.dayDiv{
+	padding-top:20px;
+	padding-bottom:20px;
+
+}
+.classData{
+	width:100%;
+	text-align:center;
+	font-size:15pt;
+	
+}
+.classTitle{
+	padding-top:10px;
+	font-size:25pt;
+	
+}
+#campusMap{
+	
+	width:100%;
+	height:auto;
+	position:absolute;
+	z-index:200;
+	display:none;
+	cursor:pointer;
+}
+#blackBack{
+	width:100%;
+	height:100%;
+	z-index:190;
+	position:absolute;
+	display:none;
+	background-color:rgba(0,0,0,.5);
+
+}
+
+#exit{
+	width:50px;
+	height:50px;
+	line-height:50px;
+	font-size:20pt;
+	color:white;
+	border-radius:50%;
+	
+	position:fixed;
+	display:none;
+	margin-top:3px;
+	margin-left:80%;
+	background-color:black;
+	text-align:center;
+	z-index:420;
+	cursor:pointer;
+
+}
+.locSpan{
+	cursor:pointer;
+
+}
+
+</style>
+
+
+<div id="dayName"></div>
+<div id="displayControls">
+
+<button id="prevDay" class="ctrlBTN" onclick = "prevDay()">
+&lt;
+</button>
+<button id="nextDay" class="ctrlBTN" onclick = "nextDay()">
+&gt;
+</button>
+
+
+</div>
+
+<div id="dayScheduleDiv">
+
+
+<!-- Monday's Schedule: -->
+<div day="1" class="dayDiv" id="day1">
+
+
+
+
+</div>
+<!-- endof Monday Schedule -->
+
+
+
+<!-- Tuesday's Schedule: -->
+<div day="2" class="dayDiv" id="day2">
+
+</div>
+<!-- endof Tuesday Schedule -->
+
+
+<!-- Wednesday's Schedule: -->
+<div day="3" class="dayDiv" id="day3">
+
+</div>
+<!-- endof Wednesday Schedule -->
+
+
+<!-- Thursday's Schedule: -->
+<div day="4" class="dayDiv" id="day4">
+
+</div>
+<!-- endof Thursday Schedule -->
+
+
+<!-- Friday's Schedule: -->
+<div day="5" class="dayDiv" id="day5">
+
+</div>
+<!-- endof Friday Schedule -->
+
+
+</div>
+
+
+<img id="campusMap"></img>
+<div id="exit" onclick = "hideIMG()">X</div>
+<div id="blackBack"><h1 style="color:pink">❤️Amanda❤</h1></div>
+
+<script>
+var d = new Date();
+currentDay = d.getDay();
+if(currentDay > 5 || currentDay < 1){
+	currentDay = 1;
+}
+dayNames = ["Monday","Tuesday","Wednesday","Thursday","Friday"];
+
+$.getJSON( "schedule.json", function( scheduleData ) {
+
+	//alert(scheduleData["classes"][1]["classID"]);
+	classData = scheduleData["classes"];
+	//For each class...
+	$.each( classData, function( theClass, Data ) {
+		classDays = "" + Data["classDay"];
+		trueClassDays = classDays.split("");
+		for(dayNumb = 0; dayNumb < trueClassDays.length; dayNumb++){
+			dayClassOn = trueClassDays[dayNumb];
+			classTitle = Data["title"];
+			classLocation = Data["location"];
+			classID = Data["classID"];
+			classStartTime = parseTime(Data["timeData"]["classStartHours"],Data["timeData"]["classStartMinutes"]);
+			classEndTime = parseTime(Data["timeData"]["classEndHours"],Data["timeData"]["classEndMinutes"]);
+			$("#day"+dayClassOn).append('<div class="classData"><p class="classTitle">'+classTitle+'</p><p class="classInfo">'+classStartTime+' - '+classEndTime+'<br><span class="locSpan" onclick="locToImg(\''+classID+'\')" classID="'+classID+'">'+classLocation+'</span></p></div>');
+		}
+			
+	});
+	
+	/*
+	<div class="classData">
+
+<p class="classTitle">CS 1200 - HON</p>
+<p class="classInfo">
+4:00 PM - 4:45 PM<br>
+SLC 1.202</p>
+
+</div>
+*/
+	
+
+});
+
+showDays();
+function showDays(){
+	$(".dayDiv").each(function(){
+		dayID = $(this).attr("day");
+		if(dayID == currentDay){
+			$(this).css("display","block");
+		}
+		else{
+			$(this).css("display","none");
+		}
+
+	});
+	theDayName = dayNames[currentDay - 1];
+	$("title").text("Abdullah's UTD Schedule - " + theDayName);
+	$("#dayName").text(theDayName);
+}
+
+</script>
+
+
+<script>
+
+function prevDay(){
+	if(currentDay == 1){
+		currentDay = 5;
+	}
+	else{
+		currentDay--;
+	}
+	showDays();
+
+}
+
+function nextDay(){
+	if(currentDay == 5){
+		currentDay = 1;
+	}
+	else{
+		currentDay++;
+	}
+	showDays();
+
+}
+
+
+function returnDayDiv(dayNumber){
+	$(".dayDiv").each(function(){
+		if($(this).attr("day") == dayNumber){
+			return this;
+		}
+	
+	});
+	return "";
+}
+
+
+function colorfiyClasses(){
+	
+	$(".classTitle").each(function(){
+	classTitle = $(this).text();
+	splitTitle = $(this).text().split("");
+	finalTitle = "";
+	for(charIOn = 0; charIOn < splitTitle.length; charIOn++){
+		charOn = classTitle[charIOn];
+		 blueVal = Math.floor(Math.random() * 257);
+		 redVal = Math.floor(Math.random() * 257);
+		 greenVal = Math.floor(Math.random() * 257);
+		 finalTitle += "<span style='color: rgb("+redVal+", "+greenVal+","+blueVal+");'>"+charOn+"</span>";
+	 }
+	 
+	 $(this).html(finalTitle);
+	});
+	
+}
+
+//setInterval(function(){colorfiyClasses();},200);
+
+
+
+function parseTime(hours, minutes){
+	timeString = "";
+	timeSuffix = "";
+	if(hours >= 12){
+		timeSuffix = "PM";
+		if(hours > 12){
+			hours = hours - 12;
+		}
+	}
+	else{
+		timeSuffix = "AM";
+		if(hours == 0){
+			hours = 12;
+		}
+	}
+	
+	if(minutes == 0){
+		minutes = "00";
+	}
+
+	timeString = "" + hours + ":" + minutes + " " + timeSuffix;
+	return timeString;
+}
+
+</script>
+
+
+
+<script>
+function showImg(imgURL){
+
+	$("#campusMap").css("display","block");
+	$("#blackBack").css("display","block");
+	$("#exit").css("display","block");
+	$("#campusMap").attr("src",imgURL);
+
+}
+
+
+function hideIMG(){
+	
+		
+	$("#campusMap").css("display","none");
+	$("#blackBack").css("display","none");
+	$("#exit").css("display","none");
+}
+
+</script>
+
+<script>
+
+
+function locToImg(classID){
+	
+	showImg("imgur//"+classID+".png");
+}
+ 
+ 
+ 
+</script>
+

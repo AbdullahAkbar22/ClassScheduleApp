@@ -1,0 +1,135 @@
+{
+
+"classes" : [
+	{
+		"classDay": 13,
+		"classID" : 83961,
+		"title": "ECS 1100 - 003",
+		"location": "ECSS 2.415",
+		"timeData": {
+			"classStartHours": 11,
+			"classStartMinutes": 0,
+			"classEndHours": 11,
+			"classEndMinutes": 50
+		}
+	},
+
+	{
+		"classDay": 13,
+		"classID" : 82001,
+		"title": "THEA 1310-002",
+		"location": "AH2 1.204",
+		"timeData": {
+			"classStartHours": 15,
+			"classStartMinutes": 0,
+			"classEndHours": 15,
+			"classEndMinutes": 50
+		}
+	},
+	
+	{
+		"classDay": 24,
+		"classID" : 80798,
+		"title": "MATH 2419 - 003",
+		"location": "SOM 2.106",
+		"timeData": {
+			"classStartHours": 8,
+			"classStartMinutes": 30,
+			"classEndHours": 9,
+			"classEndMinutes": 45
+		}
+	},
+	
+	{
+		"classDay": 24,
+		"classID" : 83427,
+		"title": "CS 2336 - 001",
+		"location": "ECSS 2.415",
+		"timeData": {
+			"classStartHours": 14,
+			"classStartMinutes": 30,
+			"classEndHours": 15,
+			"classEndMinutes": 45
+		}
+	},
+	
+	
+	{
+		"classDay": 24,
+		"classID" : 84328,
+		"title": "CS 1200 - HON",
+		"location": "SLC 1.202",
+		"timeData": {
+			"classStartHours": 16,
+			"classStartMinutes": 0,
+			"classEndHours": 16,
+			"classEndMinutes": 50
+		}
+	},
+	
+	{
+		"classDay": 24,
+		"classID" : 84563,
+		"title": "CS 2305 - HN1",
+		"location": "SLC 2.304",
+		"timeData": {
+			"classStartHours": 17,
+			"classStartMinutes": 30,
+			"classEndHours": 18,
+			"classEndMinutes": 45
+		}
+	},
+	
+	{
+		"classDay": 5,
+		"classID" : 80552,
+		"title": "MATH 2419-301 LBR",
+		"location": "FN 2.202",
+		"timeData": {
+			"classStartHours": 8,
+			"classStartMinutes": 0,
+			"classEndHours": 9,
+			"classEndMinutes": 50
+		}
+	},
+	
+	{
+		"classDay": 5,
+		"classID" : 87490,
+		"title": "HONS 3113 - HN1",
+		"location": "AD 2.238",
+		"timeData": {
+			"classStartHours": 10,
+			"classStartMinutes": 0,
+			"classEndHours": 10,
+			"classEndMinutes": 50
+		}
+	},
+	{
+		"classDay": 5,
+		"classID" : 82001,
+		"title": "THEA 1310-002",
+		"location": "AH2 1.204",
+		"timeData": {
+			"classStartHours": 15,
+			"classStartMinutes": 0,
+			"classEndHours": 15,
+			"classEndMinutes": 50
+		}
+	}
+	
+	
+	
+	
+
+]
+
+
+
+
+
+
+}
+
+
+	
